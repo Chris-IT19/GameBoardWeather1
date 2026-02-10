@@ -10,20 +10,20 @@ const tileTypes = [
   { id: 0, name: 'START\nCalm Seas', type: 'start', color: '#27AE60', icon: '⚓' },
   { id: 1, name: 'Typhoon\nFormation', type: 'quiz', color: '#3498DB', icon: '⚡' },
   { id: 2, name: 'Wind\nSystems', type: 'drag-drop', color: '#9B59B6', icon: '💨' },
-  { id: 3, name: 'Storm\nDevelopment', type: 'regular', color: '#16A085', icon: '🌀' },
+  { id: 3, name: 'Storm\nDevelopment', type: 'storm-quiz', color: '#16A085', icon: '🌀' },
   { id: 4, name: 'Rainfall &\nFlooding', type: 'problem-solving', color: '#E67E22', icon: '🌧️' },
-  { id: 5, name: 'Weather\nPatterns', type: 'regular', color: '#2C3E50', icon: '☁️' },
+  { id: 5, name: 'Weather\nPatterns', type: 'weather-quiz', color: '#2C3E50', icon: '☁️' },
   { id: 6, name: 'Storm\nSurge', type: 'simulation', color: '#C0392B', icon: '🌊' },
-  { id: 7, name: 'Coastal\nImpact', type: 'regular', color: '#D35400', icon: '🏖️' },
+  { id: 7, name: 'Coastal\nImpact', type: 'coastal-quiz', color: '#D35400', icon: '🏖️' },
   { id: 8, name: 'Preparedness\nQuiz', type: 'scenario', color: '#8E44AD', icon: '🛡️' },
-  { id: 9, name: 'Emergency\nKit', type: 'regular', color: '#27AE60', icon: '🎒' },
+  { id: 9, name: 'Emergency\nKit', type: 'emergency-quiz', color: '#27AE60', icon: '🎒' },
   { id: 10, name: 'Bonus\nChallenge', type: 'bonus', color: '#F39C12', icon: '⭐' },
-  { id: 11, name: 'Evacuation\nPlan', type: 'regular', color: '#16A085', icon: '🚨' },
+  { id: 11, name: 'Evacuation\nPlan', type: 'evacuation-quiz', color: '#16A085', icon: '🚨' },
   { id: 12, name: 'Environmental\nImpacts', type: 'reflection', color: '#7F8C8D', icon: '🌍' },
-  { id: 13, name: 'Community\nResponse', type: 'regular', color: '#2980B9', icon: '👥' },
+  { id: 13, name: 'Community\nResponse', type: 'community-quiz', color: '#2980B9', icon: '👥' },
   { id: 14, name: 'Satellite\nData', type: 'quiz', color: '#8E44AD', icon: '🛰️' },
-  { id: 15, name: 'Warning\nSystems', type: 'regular', color: '#E74C3C', icon: '📢' },
-  { id: 16, name: 'Recovery\nEfforts', type: 'regular', color: '#27AE60', icon: '🔧' },
+  { id: 15, name: 'Warning\nSystems', type: 'warning-quiz', color: '#E74C3C', icon: '📢' },
+  { id: 16, name: 'Recovery\nEfforts', type: 'recovery-quiz', color: '#27AE60', icon: '🔧' },
   { id: 17, name: 'Climate\nChange', type: 'quiz', color: '#3498DB', icon: '🌡️' },
   { id: 18, name: 'Final\nChallenge', type: 'problem-solving', color: '#C0392B', icon: '🎯' },
   { id: 19, name: 'SAFE ZONE', type: 'end', color: '#27AE60', icon: '🏁' }
@@ -150,6 +150,110 @@ const challenges = {
       ],
       correct: 1,
       explanation: 'Opening windows is a dangerous myth! It doesn\'t help and exposes you to flying debris.'
+    }
+  ],
+  stormQuiz: [
+    {
+      question: 'What stages does a tropical cyclone go through before becoming a typhoon?',
+      options: [
+        'Tropical disturbance → Tropical depression → Tropical storm → Typhoon',
+        'Storm → Hurricane → Typhoon',
+        'Cloud → Rain → Storm → Typhoon',
+        'Wind → Pressure → Typhoon'
+      ],
+      correct: 0,
+      hint: 'Think about the progressive classification system based on wind speed.'
+    }
+  ],
+  weatherQuiz: [
+    {
+      question: 'Which weather pattern is associated with typhoon formation in the Pacific?',
+      options: [
+        'Arctic oscillation',
+        'Intertropical Convergence Zone (ITCZ)',
+        'Polar vortex',
+        'Desert high pressure'
+      ],
+      correct: 1,
+      hint: 'This zone is where trade winds from both hemispheres meet near the equator.'
+    }
+  ],
+  coastalQuiz: [
+    {
+      question: 'What is the primary cause of coastal damage during a typhoon?',
+      options: [
+        'Only heavy rainfall',
+        'Storm surge combined with high waves and wind',
+        'Just the wind',
+        'Lightning strikes'
+      ],
+      correct: 1,
+      hint: 'Multiple factors work together, with rising water levels being extremely destructive.'
+    }
+  ],
+  emergencyQuiz: [
+    {
+      question: 'Which items are essential in a typhoon emergency kit?',
+      options: [
+        'Video games and snacks only',
+        'Water, food, first aid, flashlight, radio, batteries, medications, documents',
+        'Just water and food',
+        'Phone charger only'
+      ],
+      correct: 1,
+      hint: 'A comprehensive kit covers survival needs, communication, health, and important records.'
+    }
+  ],
+  evacuationQuiz: [
+    {
+      question: 'When should you evacuate during a typhoon warning?',
+      options: [
+        'Wait until the storm arrives to decide',
+        'Only if your house starts flooding',
+        'Immediately when authorities issue evacuation orders',
+        'Never evacuate, always stay home'
+      ],
+      correct: 2,
+      hint: 'Following official warnings promptly can save lives.'
+    }
+  ],
+  communityQuiz: [
+    {
+      question: 'How can communities best prepare for typhoon season?',
+      options: [
+        'Do nothing and hope for the best',
+        'Early warning systems, evacuation plans, emergency drills, supply stockpiling',
+        'Only worry about it when a typhoon is coming',
+        'Just buy food'
+      ],
+      correct: 1,
+      hint: 'Effective preparation involves multiple coordinated strategies before typhoon season begins.'
+    }
+  ],
+  warningQuiz: [
+    {
+      question: 'What does a Typhoon Signal Number 3 typically indicate?',
+      options: [
+        'Calm weather',
+        'Winds of 60-100 km/h expected, classes suspended, stay indoors',
+        'Clear skies',
+        'Just light rain'
+      ],
+      correct: 1,
+      hint: 'Higher signal numbers mean more severe conditions and stronger safety measures.'
+    }
+  ],
+  recoveryQuiz: [
+    {
+      question: 'What are the priorities immediately after a typhoon passes?',
+      options: [
+        'Go sightseeing to see the damage',
+        'Search and rescue, medical aid, restore utilities, assess damage',
+        'Take photos for social media',
+        'Start vacation'
+      ],
+      correct: 1,
+      hint: 'Life safety and basic needs come first in disaster recovery.'
     }
   ]
 };
@@ -326,7 +430,7 @@ function handleTileLanding() {
     return;
   }
 
-  if (currentTile.type === 'start' || currentTile.type === 'regular') {
+  if (currentTile.type === 'start') {
     gameState.canRoll = true;
     document.getElementById('rollDice').disabled = false;
     return;
@@ -373,6 +477,38 @@ function showChallenge(tile) {
       break;
     case 'bonus':
       challengeData = challenges.bonus[0];
+      renderQuiz(challengeData, body);
+      break;
+    case 'storm-quiz':
+      challengeData = challenges.stormQuiz[0];
+      renderQuiz(challengeData, body);
+      break;
+    case 'weather-quiz':
+      challengeData = challenges.weatherQuiz[0];
+      renderQuiz(challengeData, body);
+      break;
+    case 'coastal-quiz':
+      challengeData = challenges.coastalQuiz[0];
+      renderQuiz(challengeData, body);
+      break;
+    case 'emergency-quiz':
+      challengeData = challenges.emergencyQuiz[0];
+      renderQuiz(challengeData, body);
+      break;
+    case 'evacuation-quiz':
+      challengeData = challenges.evacuationQuiz[0];
+      renderQuiz(challengeData, body);
+      break;
+    case 'community-quiz':
+      challengeData = challenges.communityQuiz[0];
+      renderQuiz(challengeData, body);
+      break;
+    case 'warning-quiz':
+      challengeData = challenges.warningQuiz[0];
+      renderQuiz(challengeData, body);
+      break;
+    case 'recovery-quiz':
+      challengeData = challenges.recoveryQuiz[0];
       renderQuiz(challengeData, body);
       break;
   }
